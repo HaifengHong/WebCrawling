@@ -58,6 +58,7 @@ print()
 print(Soup('a')) # 查找a标签
 print(Soup.find_all(['a','b'])) # 查找a和b标签
 print(Soup(['a','b'])) # 与上行等价
+# soup()等价于soup.find_all()
 
 print()
 for tag in Soup.find_all(True): # True打印所有标签
@@ -74,7 +75,7 @@ print(Soup.find_all(id = re.compile('link'))) # [<a class="py1" href="http://www
 
 print()
 print(Soup.find_all('a')) # 从所有子孙节点查找
-print(Soup.find_all('a', recursive= False)) # 只从儿子节点查找
+print(Soup.find_all('a', recursive= False)) # 是否对子孙全部检索，默认True
 
 print()
 print(Soup.find_all(string = re.compile('python'))) # ['This is a python demo page', 'The demo python introduces several python courses.']
