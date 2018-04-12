@@ -59,6 +59,7 @@ print(Soup('a')) # 查找a标签
 print(Soup.find_all(['a','b'])) # 查找a和b标签
 print(Soup(['a','b'])) # 与上行等价
 # soup()等价于soup.find_all()
+# <tag>()等价于<tag>.find_all()
 
 print()
 for tag in Soup.find_all(True): # True打印所有标签
