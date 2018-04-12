@@ -56,8 +56,9 @@ for link in Soup.find_all('a'):
 
 print()
 print(Soup('a')) # 查找a标签
-print(Soup.find_all(['a','b'])) # 查找a和b标签
-print(Soup(['a','b'])) # 与上行等价
+print(Soup.find(['a','b'])) # 返回第一个结果元素（不是列表形式）
+print(Soup.find_all(['a','b'], limit=2)) # 查找a和b标签，限定只返回两个
+print(Soup(['a','b'])) # 与上行等价（不考虑limit）
 # soup()等价于soup.find_all()
 # <tag>()等价于<tag>.find_all()
 
