@@ -19,11 +19,19 @@ def fillUnivList(ulist, html):
             tds = tr('td') # 相当于tds = tr.find_all('td')
             ulist.append([tds[0].string, tds[1].string, tds[2].string])
 
+# def printUnivList(ulist, num):
+#     print("{:^10}\t{:^10}\t{:^10}".format("排名", "学校名称", "省份"))
+#     for i in range(num):
+#         u = ulist[i]
+#         print("{:^10}\t{:^10}\t{:^10}".format(u[0], u[1], u[2]))
+
+# 优化输出格式后的printUnivList
 def printUnivList(ulist, num):
-    print("{:^10}\t{:^10}\t{:^10}".format("排名", "学校名称", "省份"))
+    tplt = "{0:^10}\t{1:{3}^10}\t{2:^10}" # {3}指打印时需要填充时使用format函数的第三个变量，即中文空格
+    print(tplt.format("排名", "学校名称", "省份", chr(12288))) # chr(12288)表示中文空格
     for i in range(num):
         u = ulist[i]
-        print("{:^10}\t{:^10}\t{:^10}".format(u[0], u[1], u[2]))
+        print(tplt.format(u[0], u[1], u[2], chr(12288)))
 
 url = "http://www.zuihaodaxue.com/zuihaodaxuepaiming2016.html"
 uinfo = []
